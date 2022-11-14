@@ -11,7 +11,7 @@ erros = {
 	"required": "Este campo é necessário!",
 	"blank": "Este campo não pode ficar vazio!",
 	"null": "Este campo não pode ser nulo!",
-	"date_x": "Formatação inválida!"
+	"date_x": "Formatação inválida! (AAAA-MM-DD)"
 }
 
 

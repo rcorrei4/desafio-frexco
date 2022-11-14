@@ -48,3 +48,32 @@ class UsuarioConsultaTest(TestCase):
 		response = client.get(
 			reverse('consulta_usuario', kwargs={'pk': 40}))
 		self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+class CadastrarUsuarioTest(TestCase):
+    def setUp(self):
+        self.valid_payload = {
+            'name': 'Muffin',
+            'senha': '123',
+            'data_nascimento': '2000-01-01'
+        }
+        self.invalid_payload = {
+            'name': '',
+            'senha': '123',
+            'data_nascimento': '2000-01-01'
+        }
+
+    def test_criar_usuario_valido(self):
+        response = client.post(
+            reverse('cadastrar_usuarios'),
+            data=json.dumps(self.valid_payload),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_criar_usuario_valido(self):
+        response = client.post(
+            reverse('cadastrar_usuarios'),
+            data=json.dumps(self.invalid_payload),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)

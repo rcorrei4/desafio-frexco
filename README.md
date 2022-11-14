@@ -42,3 +42,9 @@ Campos:
 - login -> char
 - senha -> char
 - data_nascimento -> date (AAAA-MM-DD)
+
+## Testes
+### Para rodar os testes das views
+```
+python3 manage.py test
+```

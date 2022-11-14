@@ -125,14 +125,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework.renderers.JSONRenderer',
+        'drf_excel.renderers.XLSXRenderer',
+        'rest_framework_csv.renderers.CSVRenderer',
+    ),
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ]
-}
-
-REST_PANDAS = {
-    "RENDERERS": (
-        "rest_pandas.renderers.PandasCSVRenderer",
-        "rest_pandas.renderers.PandasExcelRenderer",
-    ),
 }

@@ -41,4 +41,4 @@ Exemplo:
 Campos:
 - login -> char
 - senha -> char
-- data_nascimento -> date (DD-MM-AAAA)
+- data_nascimento -> date (AAAA-MM-DD)

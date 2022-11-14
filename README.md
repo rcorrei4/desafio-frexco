@@ -20,7 +20,7 @@ python3 manage.py runserver
 ```
 /api/consulta/usuarios/
 ```
-Parâmetros:
+Parâmetros da URL:
 - format
 	- json
 	- xlsx
